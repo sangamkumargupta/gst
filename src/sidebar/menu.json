@@ -1,0 +1,64 @@
+[
+   
+  { 
+    "items": [
+        {
+        "label": "Dashboard",
+        "icon": "bi-arrow-repeat",
+        "children": [
+          { "label": "Home", "path": "/dashboard/home" },
+          { "label": "My Clients", "path": "/dashboard/myclients" },
+          { "label": "Search Tax Payer", "path": "/dashboard/searchTaxPayer" }
+        ]
+      },
+      {
+        "label": "Return",
+        "icon": "bi-arrow-repeat",
+        "children": [
+          { "label": "Regular", "path": "/return/regular" },
+          { "label": "Composition", "path": "/return/composition" } 
+        ]
+      },
+      {
+        "label": "Ledger",
+        "icon": " bi-file-earmark-text",
+        "path": "/ledger"
+      },
+      {
+        "label": "Reconciliations",
+        "icon": " bi-arrow-repeat",
+        "children": [
+          { "label": "GSTR-2A vs Books", "path": "/reconciliations/gstr2a" },
+          { "label": "GSTR-2B vs Books", "path": "/reconciliations/gstr2b" }
+        ]
+      },
+      {
+        "label": "Reports",
+        "icon": " bi-bar-chart",
+        "path": "/reports",
+        "children": [
+          { "label": "GSTR-2A vs Books", "path": "/reconciliations/gstr2a" },
+          { "label": "GSTR-2B vs Books", "path": "/reconciliations/gstr2b" }
+        ]
+      },
+      {
+        "label": "E-Way Bill",
+        "icon": " bi-truck",
+        "path": "/eway",
+        "badge": "BETA"
+      },
+      {
+        "label": "E-Invoice",
+        "icon": " bi-receipt",
+        "path": "/einvoice",
+        "badge": "BETA"
+      },
+      {
+        "label": "User Profile",
+        "icon": " bi-person-circle",
+        "path": "/user-profile"
+      },
+      { "label": "Profile", "icon": " bi-gear", "path": "/profile" }
+    ]
+  }
+]

@@ -1,0 +1,7 @@
+.text-purple {
+  color: #c74eed; 
+}
+
+.text-purple:hover {
+  text-decoration: underline;
+}

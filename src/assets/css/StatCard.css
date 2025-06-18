@@ -1,0 +1,16 @@
+.dashboard-card{
+    background-color: rgb(255, 255, 255) !important; 
+        color :black;
+       
+        height: 80%;
+        border-radius: 20px !important;
+        box-shadow: 6px 6px 6px  #837a7a1f
+        
+}
+.dashboard-card:hover{
+    background-color: rgb(255, 255, 255) !important; 
+        color :#D799F4;
+        width: 100%;
+        border-radius: 20px !important;
+        box-shadow: 6px 6px 6px  #837a7a1f
+}

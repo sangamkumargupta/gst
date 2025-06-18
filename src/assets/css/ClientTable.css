@@ -1,0 +1,108 @@
+.table-container {
+  max-width: 100%;
+  /* padding: 20px; */
+  margin: 20px auto;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  font-family: 'Segoe UI', sans-serif;
+  overflow-x: auto;
+}
+
+.client-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.client-table th,
+.client-table td {
+  text-align: left;
+  padding: 12px 16px;
+  vertical-align: middle;
+}
+
+.client-table thead {
+  border-bottom: 2px solid #ccc;
+  /* background: #f9f9f9; */
+}
+
+.client-table tbody tr {
+  border-bottom: 1px solid #e0e0e0;
+  transition: background 0.3s ease;
+}
+
+.client-table tbody tr:hover {
+  background: #f5faff;
+}
+
+.client-name {
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+.client-subname {
+  color: #666;
+  font-size: 12px;
+}
+
+.client-type {
+  color: #999;
+  font-size: 12px;
+  margin-top: 2px;
+}
+
+.status-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.badge {
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.badge-filed {
+  background: #e6f5e9;
+  color: #2e7d32;
+}
+.badge-filed:hover {
+  background: #2e7d32;
+  color: #e6f5e9;
+}
+
+.badge-not-filed {
+  background: #e0e0e0;
+  color: #555;
+}
+
+.badge-empty {
+  color: #aaa;
+}
+
+.login-icon {
+    background-color: #e7fce7;
+    color: rgb(69, 214, 91);
+    font-size: 27px; 
+    padding: 7px;
+    border-radius: 8px;
+}
+.login-icon:hover {
+    background-color: #2e7d32 ;
+    color: #e6f5e9;  
+    /* padding: 7px; */
+    /* border-radius: 10px; */
+}
+
+.login-icon:hover {
+  /* color: #0056b3; */
+}
+.text-center {
+  text-align: center;
+}

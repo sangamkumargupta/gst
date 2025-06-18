@@ -1,0 +1,91 @@
+[
+  {
+    "formTitle":"Customer Informations" 
+  },
+  {
+    "label": "Name",
+    "name": "fullname",
+    "type": "text",
+    "placeholder": "Enter your full name"
+  },
+  {
+    "label": "Trade Name",
+    "name": "trade_name",
+    "type": "text",
+    "placeholder": "Enter your trade name"
+  },
+  {
+    "label": "GST IN",
+    "name": "gstin",
+    "type": "text",
+    "placeholder": "GST IN"
+  },
+  {
+    "label": "PAN CARD",
+    "name": "pan",
+    "type": "text",
+    "placeholder": "Enter  your pan number"
+  },
+  {
+    "label": "Tax Payer Type",
+    "name": "taxpayer_type",
+    "type": "select",
+    "options": ["Regular", "Composition"]
+  },
+  {
+    "label": "Registeration Date",
+    "name": "registration_date",
+    "type": "date",
+    "placeholder": ""
+  },
+  {
+    "label": "Constitution of Business",
+    "name": "Constitution_of_Business",
+    "type": "text",
+    "placeholder": ""
+  },
+  {
+    "label": "GST In Status",
+    "name": "gstin_status",
+    "type": "select",
+    "options": ["Active", "inactive"],
+    "placeholder": ""
+  },
+  {
+    "label": "Annual Tunover",
+    "name": "annual_tunover",
+    "type": "text",
+    "placeholder": ""
+  },
+  {
+    "label": "Total Income",
+    "name": "total_income",
+    "type": "text",
+    "placeholder": ""
+  },
+  {
+    "label": "Tax Payment In Cash",
+    "name": "tax_payment_in_cash",
+    "type": "text",
+    "placeholder": ""
+  },
+  {
+    "label": "E-kyc Verified",
+    "name": "e_kyc_verified",
+    "type": "text",
+    "placeholder": ""
+  },
+  {
+    "label": "Aadhar Authenticated",
+    "name": "aadhar_authenticated",
+    "type": "text",
+    "placeholder": ""
+  },
+  {
+    "label": "Status",
+    "name": "status",
+    "type": "select",
+    "options": ["Active", "Inactive"],
+    "placeholder": ""
+  }
+]

@@ -1,0 +1,146 @@
+.header {
+
+  top: 0;
+  /* Align to top */
+  left: 0;
+  right: 0;
+  z-index: 999;
+  /* Ensure it's above other content */
+  position: sticky;
+  display: flex;
+  /* width: auto; */
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background: white;
+  border-right: 2px solid #cccccc2b !important;
+  flex-wrap: wrap;
+}
+
+
+
+.left-section,
+.right-section {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  background: #f0f0f0;
+  padding: 5px 10px;
+  border-radius: 6px;
+}
+
+.search-box input {
+  border: none;
+  background: transparent;
+  outline: none;
+  margin-right: 5px;
+}
+
+/* Hiding elements only on mobile */
+@media (max-width: 768px) {
+  .search-box input {
+    width: 180px;
+    /* padding-left:100px; */
+    /* display: none; Hide search input */
+  }
+
+  .notification-badge,
+  .earth,
+  .square {
+    display: none;
+    /* Hide dropdown */
+  }
+
+  .dropdown {
+    display: none;
+    /* Hide dropdown */
+  }
+
+  .search-box {
+    /* background: none; Adjust for mobile */
+    /* padding-left: 150px; */
+
+  }
+
+  .right-section span {
+    display: none;
+    /* Hide profile name */
+  }
+
+  .right-section {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.dropdown {
+  border: none;
+  background: #f0f0f0;
+  outline: none;
+  margin-right: 5px;
+  padding: 8px;
+  border-radius: 10px;
+}
+
+
+
+
+.profile-section {
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.profile-submenu {
+  position: absolute;
+  top: 37px;
+  right: 0;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 15px;
+  z-index: 999;
+  width: 150px;
+}
+
+.profile-submenu p {
+
+  margin: 5px 0;
+  font-size: 14px;
+}
+
+.profile-btn {
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  padding: 10px 10px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.logout-btn {
+
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  padding: 10px 10px;
+  justify-content: center;
+  border: none;
+
+  cursor: pointer;
+  width: 100%;
+}
+
+.profile-btn:hover {
+  color: rgb(185, 78, 237);
+  background-color: rgb(185 78 237 / 5%);
+}
+
+.logout-btn:hover {
+  color: rgb(185, 78, 237);
+  background-color: rgb(185 78 237 / 5%);
+}

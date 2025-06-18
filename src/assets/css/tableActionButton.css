@@ -1,0 +1,37 @@
+
+.table-action-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 10px;
+  cursor: pointer;
+  border-color:#f7ecff!important;
+   background-color: #f7ecff; 
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.table-action-btn.edit {
+  background-color: #f7ecff; 
+  color:rgb( 185, 78, 237); 
+  border-color:#f7ecff!important;
+  
+}
+
+.table-action-btn.edit:hover {
+  background-color: #d377ee;
+ 
+  color:white;
+}
+
+.table-action-btn.login {
+  background-color: #e7fce7; /* soft green */
+  color: rgb(69, 214, 91) ; /* greenish icon */
+}
+
+.table-action-btn.login:hover {
+  background-color: rgb(69, 214, 91);
+  color:white;
+ 
+}

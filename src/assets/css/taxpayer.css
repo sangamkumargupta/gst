@@ -1,0 +1,191 @@
+/* Main Container */
+.taxpayer-container {
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.07);
+  font-family: "Segoe UI", sans-serif; 
+}
+
+/* Form Section */
+.form-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.form-section input {
+  flex: 1;
+  min-width: 220px;
+  padding: 12px 16px;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: #f9fafb;
+  transition: 0.3s;
+}
+
+.form-section input:focus {
+  border-color: #6366f1;
+  background: #fff;
+  outline: none;
+}
+
+/* Captcha Styling */
+.captcha-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.captcha-box {
+  display: flex;
+  gap: 8px;
+  padding: 10px 18px;
+  background-color: #eef2ff;
+  border: 2px dashed #b94eed;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 18px;
+  letter-spacing: 4px;
+  color: #1e3a8a;
+  height: 42px;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+}
+
+.refresh-btn { 
+  color: #b94eed;
+   background-color: #f7ecff; 
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #4b5563;
+  transition: transform 0.2s;
+}
+
+.refresh-btn:hover {
+  background-color: #b94eed;
+  /* transform: rotate(90deg); */
+  color: white;
+}
+
+.search{
+  background-color: rgb(69 214 91 / 10%);
+  color : rgb(69, 214, 91);
+  /* background-color: #f7ecff;  */
+  border :none;
+}
+.search:hover{
+  background-color: rgb(69, 214, 91);
+  color : white;
+  /* background-color: #f7ecff;  */
+}
+
+/* Search Button */
+.form-section button {
+  border :none;
+  padding: 12px 20px;
+ 
+  /* color: #b94eed; */
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.3s;
+}
+
+.form-section button:hover { 
+  color : white;
+}
+
+/* Error Message */
+.error-message {
+  color: #e19cee;
+  font-size: 14px;
+  /* margin-top: 10px; */
+}
+
+/* Table Section */
+.taxpayer-table {
+  overflow-x: auto;
+}
+
+.taxpayer-table table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.taxpayer-table th,
+.taxpayer-table td {
+  font-size: .85rem;
+  padding: 14px 20px;
+  text-align: left;
+  border: 1px solid #e5e7eb;
+}
+
+.taxpayer-table th {
+  background-color: #f3f4f6;
+  font-weight: 600;
+  color: #374151;
+}
+
+.taxpayer-table td {
+  color: #1f2937;
+  background-color: #ffffff;
+}
+
+/* Section Below Table */
+.nature-section {
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 1.5rem;
+}
+
+.nature-section h4 {
+  margin-bottom: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #111827;
+}
+
+.nature-section p,
+.nature-section li {
+  font-size: 14px;
+  color: #374151;
+}
+
+.nature-section ul {
+  padding-left: 20px;
+  margin-top: 0.5rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .form-section {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .form-section input,
+  .form-section button {
+    width: 100%;
+  }
+
+  .taxpayer-table th,
+  .taxpayer-table td {
+    font-size: 13px;
+  }
+}

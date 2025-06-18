@@ -1,0 +1,430 @@
+.gstr-options {
+  max-width: 1100px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  /* font-family: "Segoe UI", sans-serif; */
+  transition: all 0.3s ease-in-out;
+}
+
+.filter-row {
+  border-bottom: 1px solid #F0F0F0 !important;
+  display: flex;
+  flex-wrap: wrap;
+  /* gap: 12px; */
+  margin-bottom: 1.8rem;
+  padding-bottom:10px;
+}
+
+.filter-row .btn {
+  color: #333;
+}
+
+.filter-row select {
+  flex: 1 1 150px;
+  min-width: 140px;
+  padding: 10px 14px;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f8f8f8;
+  color: #333;
+  transition: all 0.3s ease;
+}
+
+.filter-row select:focus {
+  outline: none;
+  /* border: 1px solid #007bff; */
+  background-color: #f0faff;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2);
+}
+
+.filter-row select:hover {
+  background-color: #f0f0f0;
+  /* border-color: #007bff; */
+}
+
+.tabs {
+  justify-content: center;
+  justify-content: space-between;
+  display: flex;
+  flex-wrap: wrap;
+  /* gap: 10px; */
+  margin-bottom: 1.5rem;
+  background-color: #F0F0F0;
+  /* border-radius: 10px; */
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+}
+
+.tab-btn {
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  width: 167px;
+  height: 36px;
+  padding: 6px 10px;
+  font-size: 14px;
+  text-align: center; 
+  border: none; 
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight: 500;
+  color: #B94EED;
+}
+
+/* .tab-btn:hover {
+  background-color: #e0e0e0;
+} */
+
+.tab-btn.active { 
+  background-color: #B94EED;
+  color: #fff; 
+}
+
+.sub-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; 
+  align-items: center;
+  margin: 2rem 0;
+}
+
+.left-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.right-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  align-items: center;
+}
+
+.btn,
+.left-actions select.btn {
+
+  appearance: auto; 
+  font-size: 14px;
+  font-weight: 500; 
+  color:#6f42c1;
+  border-radius: 16px;
+  cursor: pointer;
+  /* color: #fff; */
+  transition: background-color 0.3s ease;
+}
+
+.btn.blue ,.btn.purple ,.my-button{ 
+  border: 1px solid  #6f42c1 !important;
+}
+
+.btn.blue:hover { 
+} 
+.btn.purple:hover { 
+}
+
+.status {
+  font-size: 14px;
+  font-weight: 600;
+  padding: 8px 12px;
+  border-radius: 6px;
+  /* background-color: #f2f2f2; */
+  /* background-color: #6f42c1; */
+}
+
+.status.green {
+  background-color: #EAFAF1;
+  /* color: #93a39f; */
+  color: green;
+}
+.status.green:hover{
+  background-color: green;
+  color:  #EAFAF1;
+}
+
+.status.red {
+  background-color: #FDEDEB;
+  color: #ed683c;
+}
+.status.red:hover {
+  background-color: #dc3545;
+  color: white;
+}
+
+.nil-return {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+}
+
+.custom-checkbox {
+  width: 16px;
+  height: 16px;
+  /* accent-color: #007bff; */
+  cursor: pointer;
+}
+
+.checkbox-label {
+  font-weight: 500;
+  color: #333;
+}
+
+.no-data,
+.data-present {
+  margin-top: 20px;
+  padding: 16px;
+  border-radius: 10px;
+  font-weight: 500;
+}
+
+.no-data {
+  background-color: #ffe6e6;
+  border: 1px solid #ff4d4f;
+  color: #a30000;
+}
+
+.data-present {
+  background-color: #e6ffe6;
+  border: 1px solid #34c759;
+  color: #006400;
+}
+
+.left-actions select option[disabled] {
+  display: none;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+  .filter-row select {
+    flex: 1 1 100%;
+  }
+
+  .tabs {
+    justify-content: center;
+  }
+
+  .tab-btn {
+    flex: 1 1 auto;
+  }
+
+  .sub-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .right-actions {
+    justify-content: flex-start;
+  }
+
+  .status {
+    width: 100%;
+  }
+} 
+
+/* 
+sangam
+ */
+.dropdown-wrapper-frequency-tab {
+  position: relative;
+  display: inline-block;
+  margin: 0 0.5rem 1rem 0;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.arrow-frequency-tab {
+  float: right;
+  font-size: 12px;
+}
+
+.dropdown-frequency-tab {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  margin-top: 8px;
+  padding: 8px 0;
+  width: 100%;
+  min-width: auto;
+  box-sizing: border-box;
+}
+
+.option-frequency-tab {
+  padding: 10px 16px ;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  font-size: 14px;
+  color: #333;
+}
+
+.option-frequency-tab:hover,
+.selected-frequency-tab {
+  background-color: #f1f1f1;
+}
+
+
+.btn-frequency-tab { 
+    background: white;
+    border: none;
+    padding: 10px 14px;
+    cursor: pointer; 
+    border-radius: 20px;
+    width: auto;
+    text-align: left;
+    font-size: 14px;
+    color: #B94EED; 
+    font-weight: 500; 
+    border: 1px solid #B94EED; 
+}
+
+
+/*  */
+.dropdown-wrapper-return-type {
+  position: relative;
+  display: inline-block;
+  margin: 0 0.5rem 1rem 0;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.btn-return-type {
+  background: white;
+  border: none;
+  padding: 10px 14px;
+  cursor: pointer;
+  border-radius: 20px;
+  width: 193px;
+  text-align: left;
+  font-size: 14px;
+  color: black;
+  font-weight: 500;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.arrow-return-type {
+  float: right;
+  font-size: 12px;
+}
+
+.dropdown-return-type {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  margin-top: 8px;
+  padding: 8px 0;
+  width: 100%;
+  min-width: 180px;
+  box-sizing: border-box;
+}
+
+.option-return-type {
+  padding: 10px 16px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  font-size: 14px;
+  color: #333;
+}
+
+.option-return-type:hover,
+.selected-return-type {
+  background-color: #f1f1f1;
+}
+
+
+/*  */
+/* Wrapper for all dropdowns */
+.dropdown-wrapper-return-type,
+.dropdown-wrapper-year,
+.dropdown-wrapper-frequency,
+.dropdown-wrapper-month,
+.dropdown-wrapper-company {
+  position: relative;
+  display: inline-block;
+  margin: 0 0.5rem 1rem 0;
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* Button styling for all dropdowns */
+.btn-return-type,
+.btn-year,
+.btn-frequency,
+.btn-month,
+.btn-company {
+  background: white;
+  border: none;
+  padding: 10px 14px;
+  cursor: pointer;
+  border-radius: 20px;
+  width: 193px;
+  text-align: left;
+  font-size: 14px;
+  color: black;
+  font-weight: 500;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Arrow icon */
+.arrow-return-type,
+.arrow-year,
+.arrow-frequency,
+.arrow-month,
+.arrow-company {
+  float: right;
+  font-size: 12px;
+}
+
+/* Dropdown menu container */
+.dropdown-return-type,
+.dropdown-year,
+.dropdown-frequency,
+.dropdown-month,
+.dropdown-company {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  margin-top: 8px;
+  padding: 8px 0;
+  width: 100%;
+  min-width: 180px;
+  box-sizing: border-box;
+}
+
+/* Dropdown options */
+.option-return-type,
+.option-year,
+.option-frequency,
+.option-month,
+.option-company {
+  padding: 10px 16px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  font-size: 14px;
+  color: #333;
+}
+
+/* Hover and selected state */
+.option-return-type:hover,
+.option-year:hover,
+.option-frequency:hover,
+.option-month:hover,
+.option-company:hover,
+.selected-return-type,
+.selected-year,
+.selected-frequency,
+.selected-month,
+.selected-company {
+  background-color: #f1f1f1;
+}

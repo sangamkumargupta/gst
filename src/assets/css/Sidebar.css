@@ -1,0 +1,121 @@
+/* Sidebar Container */
+.sidebar {
+    user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 230px;
+  background-color: #ffffff;
+  overflow-y: auto;
+  transition: all 0.3s ease-in-out;
+  z-index: 1040;
+}
+
+.sidebar.collapsed {
+  transform: translateX(-100%);
+}
+
+.sidebar.open {
+  border-right:2px solid #cccccc2b !important;
+  transform: translateX(0);
+}
+
+/* Main content area adjustment */
+.main-content {
+  transition: margin-left 0.3s ease-in-out;
+  width: 100%;
+}
+
+.main-content.with-sidebar {
+  margin-left: 230px;
+  width: auto;
+}
+
+.main-content.no-sidebar {
+  margin-left: 0;
+}
+
+/* Section group title */
+.text-secondary {
+    color: rgb(199, 114, 241) !important;
+    padding-left: 13px !important    ;
+}
+
+/* Sidebar brand heading */
+.sider-heading {
+  color: black !important;
+}
+
+/* Unified nav-link styling (applies to all items) */
+.nav-link {
+  display: flex;
+  align-items: center !important;
+  text-align: left !important;
+  justify-content: space-between;
+  color: #6f778e !important;
+  font-size: 0.85rem !important;
+  /* padding: 5px 15px !important; */
+  border-radius: 8px;
+  transition: all 0.2s ease-in-out;
+   margin-top:10px;
+}
+
+/* Hover effect for all links */
+.nav-link:hover {
+  color: rgb(199, 114, 241) !important;
+  background-color: rgb(247, 248, 249);
+  box-shadow: 4px 4px 10px #ededed;
+}
+
+/* Active link styling */
+.nav-link.active {
+ 
+  color: rgb(199, 114, 241) !important;
+  font-weight: 400;
+  background-color: rgb(247, 248, 249) !important;
+  box-shadow: 4px 4px 10px #ededed;
+}
+
+/* Child links (submenu) can be indented more if needed */
+.nav .nav .nav-link {
+  padding-left: 40px !important;
+}
+
+/* Icon box styling */
+.icons {
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0px -1px 4px 3px #ededed;
+}
+
+/* Light background override */
+.bg-light {
+  background-color: white !important;
+}
+
+/* Optional cleanup */
+li {
+  list-style: none;
+}
+ul{
+    padding-left:10px !important;
+}
+
+.mainmenu{ 
+    padding:5px !important;
+}
+.sidebar-border {
+  border-right: 2px solid #ccc; /* Adjust the color & thickness */
+}
+
+.hovermenu{
+  width:60px;
+}
+
+.flex-column{
+  padding-right:10px !important; 
+}
