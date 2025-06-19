@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "../../assets/css/clients.css";
-import PageHeader from "../../components/pageHeader";
+import PageHeader from "../../components/PageHeader";
 import ToggleSelect from "../../components/DropdownToggle";
 import { FaFileAlt } from "react-icons/fa";
 import Tabs from "../../components/Tabs";
@@ -10,12 +10,22 @@ const yearOptions = ["2022-2023", "2023-2024", "2024-2025"];
 const frequencyOptions = ["MONTHLY", "QUARTERLY"];
 const frequencyTabOptions = ["SUMMARY", "REGULAR", "AMENDMENT"];
 const monthOptions = [
-  "JANUARY", "FEBRUARY", "MARCH", "APRIL", "MAY", "JUNE",
-  "JULY", "AUGUST", "SEPTEMBER", "OCTOBER", "NOVEMBER", "DECEMBER"
+  "JANUARY",
+  "FEBRUARY",
+  "MARCH",
+  "APRIL",
+  "MAY",
+  "JUNE",
+  "JULY",
+  "AUGUST",
+  "SEPTEMBER",
+  "OCTOBER",
+  "NOVEMBER",
+  "DECEMBER",
 ];
 const companyOptions = ["GODAWARI INVENTIVE", "ACME CORP", "XYZ TRADERS"];
-const tabs = ["GSTR 1", "GSTR 3B", "GSTR 2A", "GSTR 2B", "CMP 08", "GSTR 4A"];
 
+const tabs = ["GSTR 1", "GSTR 3B", "GSTR 2A", "GSTR 2B", "CMP 08", "GSTR 4A"];
 const Clients = () => {
   const [filters, setFilters] = useState({
     returnType: "REGULAR",
@@ -23,7 +33,7 @@ const Clients = () => {
     frequency: "MONTHLY",
     month: "NOVEMBER",
     company: "GODAWARI INVENTIVE",
-    frequencys: "SUMMARY"
+    frequencys: "SUMMARY",
   });
 
   const [activeTab, setActiveTab] = useState("GSTR 1");
@@ -38,7 +48,7 @@ const Clients = () => {
       gstrType: "GSTR 1",
       arn: "ARN12345678",
       date: "2022-11-25",
-      status: "Filed"
+      status: "Filed",
     },
     {
       returnType: "REGULAR",
@@ -49,8 +59,8 @@ const Clients = () => {
       gstrType: "GSTR 3B",
       arn: "ARN23456789",
       date: "2023-12-15",
-      status: "Pending"
-    }
+      status: "Pending",
+    },
   ]);
 
   const handleFilterChange = (field, value) => {
@@ -69,7 +79,11 @@ const Clients = () => {
 
   return (
     <>
-      <PageHeader title="Clients" parentTitle="Return" parentLink="/return/home" />
+      <PageHeader
+        title="Clients"
+        parentTitle="Return"
+        parentLink="/return/home"
+      />
 
       <div className="gstr-options">
         <div className="filter-row">
@@ -151,7 +165,6 @@ const Clients = () => {
               selectedOptionClass="selected-frequency-tab"
               arrowClass="arrow-frequency-tab"
             />
-             
 
             <select className="btn blue">
               <option>Regular</option>
@@ -181,12 +194,15 @@ const Clients = () => {
 
         {!filteredData ? (
           <div className="no-data">
-            <span>No Data : No return data found for {filters.month}-{filters.year}</span>
+            <span>
+              No Data : No return data found for {filters.month}-{filters.year}
+            </span>
           </div>
         ) : (
           <div className="data-present">
             <p>
-              ✅ Data available for {activeTab} filed on {filteredData.date} with ARN {filteredData.arn}
+              ✅ Data available for {activeTab} filed on {filteredData.date}{" "}
+              with ARN {filteredData.arn}
             </p>
           </div>
         )}

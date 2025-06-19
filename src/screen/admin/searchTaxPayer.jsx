@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "../../assets/css/taxpayer.css";
-import PageHeader from "../../components/pageHeader";
+import PageHeader from "../../components/PageHeader";
 import '@fortawesome/fontawesome-free/css/all.min.css'; 
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -88,7 +88,7 @@ const dummyData = [
   },
 ];
 
-const Taxpayer = () => {
+const SearchTaxPayer = () => {
   const [gstin, setGstin] = useState("");
   const [captcha, setCaptcha] = useState("");
   const [captchaText, setCaptchaText] = useState("");
@@ -241,4 +241,4 @@ const handleSearch = () => {
   );
 };
 
-export default Taxpayer;
+export default SearchTaxPayer;

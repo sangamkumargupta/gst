@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-import "../assets/css/header.css";
+import "../assets/css/Header.css";
 import { FaBars, FaSearch, FaCog ,FaSignOutAlt } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 

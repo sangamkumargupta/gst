@@ -1,16 +1,11 @@
 import React, { useState, useRef, useEffect } from "react";
+import "../assets/css/DropdownToggle.css";
 
 const DropdownToggle = ({
   label,
   options,
   value,
   onChange,
-  className = "",              // wrapper class
-  buttonClass = "",            // button style
-  dropdownClass = "",          // dropdown style
-  optionClass = "",            // option item style
-  selectedOptionClass = "",    // selected item style
-  arrowClass = ""              // arrow icon style
 }) => {
   const [open, setOpen] = useState(false);
   const ref = useRef();
@@ -26,31 +21,33 @@ const DropdownToggle = ({
   }, []);
 
   return (
-    <div className={className} ref={ref}>
-      <button
-        className={buttonClass}
-        onClick={() => setOpen(!open)}
-      >
-        {value || label}
-        <span className={arrowClass}>▼</span>
-      </button>
+    <div className="custom-dropdown-wrapper">
+      <div className="custom-dropdown-toggle-wrapper" ref={ref}>
+        <button
+          className="custom-btn-dropdown"
+          onClick={() => setOpen(!open)}
+        >
+          {value || label}
+          <span className={`custom-arrow-dropdown ${open ? "open" : ""}`}>▼</span>
+        </button>
 
-      {open && (
-        <ul className={dropdownClass} >
-          {options.map((opt) => (
-            <li 
-              key={opt}
-              className={`${optionClass} ${value === opt ? selectedOptionClass : ""}`}
-              onClick={() => {
-                onChange(opt);
-                setOpen(false);
-              }}
-            >
-              {opt}
-            </li>
-          ))}
-        </ul>
-      )}
+        {open && (
+          <ul className="custom-dropdown-menu">
+            {options.map((opt) => (
+              <li
+                key={opt}
+                className={`custom-dropdown-option ${value === opt ? "custom-dropdown-option-selected" : ""}`}
+                onClick={() => {
+                  onChange(opt);
+                  setOpen(false);
+                }}
+              >
+                {opt}
+              </li>
+            ))}
+          </ul>
+        )}
+      </div>
     </div>
   );
 };

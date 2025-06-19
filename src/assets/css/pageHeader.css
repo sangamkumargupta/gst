@@ -1,7 +1,68 @@
 .text-purple {
-  color: #c74eed; 
+  color: #c74eed;
 }
 
 .text-purple:hover {
   text-decoration: underline;
+}
+
+/* Main page header layout */
+.pageHeader {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+/* Desktop action section */
+.pageHeader-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* GST Client text for desktop */
+.gstClient-text {
+  font-weight: bold;
+}
+
+/* Mobile GST Client wrapper (full width & centered) */
+.gstClient-mobile-wrapper {
+  display: none;
+  width: 100%;
+  margin-top: 10px;
+}
+
+/* Text for mobile GST client */
+.gstClient-mobile-text {
+  font-weight: bold;
+}
+
+/* Login button */
+.loginButton {
+  background: #E7FCE7;
+  color: #45D65B;
+  padding: 10px;
+  font-size: 15px;
+  border-radius: 10px;
+  text-decoration: none !important;
+  display: inline-flex;
+  align-items: center;
+  border: none;
+}
+
+.loginButton:hover {
+  background: #45D65B;
+  color: #E7FCE7;
+}
+
+/* Responsive behavior */
+@media (max-width: 576px) {
+  .gstClient-text {
+    display: none; /* Hide desktop text */
+  }
+
+  .gstClient-mobile-wrapper {
+    display: block; /* Show mobile GST client */
+  }
 }

@@ -1,0 +1,8 @@
+.details-dropdown {
+    border-bottom: 1px solid #F0F0F0 !important;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px !important;
+    margin-bottom: 1.8rem;
+    padding-bottom: 10px;
+}

@@ -10,11 +10,11 @@ import {
   FaYoutube,
   FaEdit,
 } from "react-icons/fa";
-import PageHeader from "../../components/pageHeader";
+import PageHeader from "../../components/PageHeader";
 import "bootstrap/dist/css/bootstrap.min.css";
 import '../../assets/css/profile.css';
 
-const ProfileCard = () => {
+const Profile = () => {
   return (
     <>
     <PageHeader
@@ -182,4 +182,4 @@ const ProfileCard = () => {
   );
 };
 
-export default ProfileCard;
+export default Profile;

@@ -8,7 +8,7 @@
         "children": [
           { "label": "Home", "path": "/dashboard/home" },
           { "label": "My Clients", "path": "/dashboard/myclients" },
-          { "label": "Search Tax Payer", "path": "/dashboard/searchTaxPayer" }
+          { "label": "Search Tax Payer", "path": "/dashboard/search-tax-payer" }
         ]
       },
       {

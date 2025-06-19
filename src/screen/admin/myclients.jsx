@@ -6,10 +6,11 @@ import {
   FaTrash,
   FaSignInAlt,
   FaSearch,
+  FaSave  ,
 } from "react-icons/fa";
 import Datatable from "../../components/DataTable.jsx";
-import TableActionButton from "../../components/TableActionButton";
-import PageHeader from "../../components/pageHeader";
+import TableActionButton from "../../components/TableActionButton.jsx";
+import PageHeader from "../../components/PageHeader.jsx";
 
 
 const myClientsData = [
@@ -79,6 +80,11 @@ const MyClients = () => {
                 style={{ cursor: "pointer" }}
                 onClick={() => togglePasswordVisibility(rowIndex)}
               />
+              <FaSave
+                style={{ cursor: "pointer" }}
+                onClick={() => togglePasswordVisibility(rowIndex)}
+              />
+              
             </>
           )}
         </div>

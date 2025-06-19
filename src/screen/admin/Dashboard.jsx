@@ -1,9 +1,6 @@
-import React, { useMemo } from "react";
-// import StatCard from "../../components/StatCard";
-// import { statsData, tableData } from "../../dummyData/dummyData";
-// import DataTable from "../../components/DataTable";
+import React from "react"; 
 import "../../assets/css/Dashboard.css";
-import PageHeader from "../../components/pageHeader";
+import PageHeader from "../../components/PageHeader";
 const versionData = [
   {
     release: "Release 1.0.25",
@@ -119,13 +116,7 @@ const versionData = [
   },
 ];
 
-const Dashboard = () => {
-  // const columns = useMemo(() => [
-  //   { Header: "ID", accessor: "id" },
-  //   { Header: "Name", accessor: "name" },
-  //   { Header: "Email", accessor: "email" },
-  //   { Header: "Role", accessor: "role" },
-  // ], []);
+const Dashboard = () => { 
 
   return (
     <>
@@ -169,39 +160,10 @@ const Dashboard = () => {
               </>
             ))}
           </tbody>
-
-          {/* <tbody>
-          {versionData.map((release, releaseIndex) =>
-            release.entries.map((entry, entryIndex) => (
-              
-              <tr key={`${releaseIndex}-${entryIndex}`}>
-                <td>{entry.no}</td>
-                <td>{entry.section}</td>
-                
-                <td>
-                  <strong style={{ color: "#d21a1a" }}>{release.release} (Date: {release.date})</strong>
-                  <br />
-                  {entry.description}
-                </td>
-              </tr>
-            ))
-          )}
-        </tbody> */}
+ 
         </table>
       </div>
-    </>
-    // <div className="ml-64 p-6 space-y-6 bg-gray-50 min-h-screen text-gray-800">
-    //   <div className="row">
-    //          {statsData.map((stat, i) => (
-    //         <div className="col-lg-3">
-    //             <StatCard key={i} {...stat}  />
-    //         </div>
-    //     ))}
-    //     </div>
-    //     <div className=" p-6 rounded-xl shadow-md mt-6">
-    //       <DataTable columns={columns} data={tableData} />
-    //     </div>
-    // </div>
+    </> 
   );
 };
 

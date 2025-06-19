@@ -1,7 +1,7 @@
 import React from 'react';
 
-const home = () => {
-  return <h2 className='text-center text-black'>home page</h2>;
+const Home = () => {
+  return <h2 className='text-center text-black'>Demo Page</h2>;
 };
 
-export default home;
+export default Home;

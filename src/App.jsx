@@ -1,31 +1,25 @@
 import React, { useState, useEffect, useRef } from "react";
-import {
-  BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {   BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import Sidebar from "./components/Sidebar";
-import Header from "./components/header";
-import Footer from "./components/footer"; 
-// only for test purpose
-import PopupMessage from "./components/PopupMessage"; 
+import Header from "./components/Header";
+import Footer from "./components/Footer";   
 import Dashboard from "./screen/admin/Dashboard";
-import Profile from "./screen/admin/Profile";
-import MyTablePage from "./screen/admin/MyTablePage";
-import Ledger from "./screen/admin/MyTablePage";
+import Profile from "./screen/admin/Profile"; 
+import Ledger from "./screen/admin/Home";
 import ClientTable from "./screen/admin/ClientTable";
-import ReturnPage from "./screen/admin/ReturnPage";
-import Home from "./screen/admin/Home";
-import Myclients from "./screen/admin/myclients";
-import SearchTaxPayer from "./screen/admin/searchTaxPayer";
-import Eway from "./screen/admin/Eway";
-import Einvoice from "./screen/admin/Einvoice";
+import ClientDetail from "./screen/admin/ClientDetail";
+import ReturnPage from "./screen/admin/ReturnPage"; 
+import MyClients from "./screen/admin/MyClients";
+import SearchTaxPayer from "./screen/admin/SearchTaxPayer";
+import Eway from "./screen/admin/Home";
+import Einvoice from "./screen/admin/Home";
 import UserProfile from "./screen/admin/UserProfile"; 
-import Clients from "./screen/admin/clients";
-import Login from "./screen/login";
+import Clients from "./screen/admin/Clients";
+import Login from "./screen/Login";
 
-import "./app.css";
-
-// Layout Wrapper for Authenticated Pages
+import "./App.css"; 
 const Layout = ({ children, sidebarOpen, setSidebarOpen, isDesktop, sidebarRef, menuButtonRef, }) => (
   <div className="app-wrapper d-flex">
     <Sidebar
@@ -50,7 +44,7 @@ const Layout = ({ children, sidebarOpen, setSidebarOpen, isDesktop, sidebarRef, 
 
 function App() {
   // only for test purpose
-  const [popup, setPopup] = useState(null);
+  // const [popup, setPopup] = useState(null);
   const [sidebarOpen, setSidebarOpen] = useState(window.innerWidth >= 768);
   const [isDesktop, setIsDesktop] = useState(window.innerWidth >= 768);
   const sidebarRef = useRef(null);
@@ -163,7 +157,7 @@ function App() {
                 menuButtonRef,
               }}
             >
-              <Myclients />
+              <MyClients />
             </Layout>
           }
         />
@@ -182,6 +176,23 @@ function App() {
             </Layout>
           }
         />
+        <Route
+        path="/return/regular/:id"
+        element={
+          <Layout
+            {...{
+              sidebarOpen,
+              setSidebarOpen,
+              isDesktop,
+              sidebarRef,
+              menuButtonRef,
+            }}
+          >
+            <ClientDetail />
+          </Layout>
+        }
+      />
+
         <Route
           path="/return/composition"
           element={
@@ -216,7 +227,7 @@ function App() {
           }
         />
         <Route
-          path="/dashboard/searchTaxPayer"
+          path="/dashboard/search-tax-payer"
           element={
             <Layout
               {...{

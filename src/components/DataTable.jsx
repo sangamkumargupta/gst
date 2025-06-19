@@ -1,12 +1,10 @@
 import React, { useState, useMemo } from "react";
-import "../assets/css/datatable.css";
+import "../assets/css/DataTable.css";
 
 const DataTable = ({
   data,
   columns = [],
-  itemsPerPage = 5,
-  onEdit,
-  onDelete,
+  itemsPerPage = 5, 
   fetchError = false,
 }) => {
   const [searchQuery, setSearchQuery] = useState("");

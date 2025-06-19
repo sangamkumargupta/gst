@@ -1,5 +1,5 @@
 import React from "react";
-import "../assets/css/tableActionButton.css";
+import "../assets/css/TableActionButton.css";
 
 const TableActionButton = ({ icon: Icon, title, onClick, type }) => {
   return (
