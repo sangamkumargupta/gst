@@ -1,0 +1,137 @@
+/* Remove default Bootstrap modal paddings */
+.modal-dialog {
+  margin: 0 auto;
+  max-width: 400px; /* You can adjust this width */
+}
+
+.modal-content {
+  padding: 0 !important;
+  border: none;
+  background: transparent;
+  box-shadow: none;
+  border-radius: 0;
+}
+
+.modal-body {
+  padding: 0 !important;
+}
+
+/* Custom Login Modal Box */
+.custom-login-modal {
+  /* background: #ffffff; */
+  border-radius: 20px;
+  padding: 40px 30px;
+  width: 100%;
+  margin: 0 auto;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* Headings */
+.login-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #8e44ec;
+  margin-bottom: 8px;
+}
+
+.login-subtitle {
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 24px;
+}
+
+/* Form Styling */
+.login-form {
+  text-align: left;
+}
+
+.login-label {
+  display: block;
+  font-weight: 500;
+  font-size: 14px;
+  margin-bottom: 6px;
+  color: #333;
+}
+
+.login-input {
+  width: 100%;
+  padding: 10px 12px;
+  margin-bottom: 16px;
+  border: none;
+  border-radius: 8px;
+  background: #f0f4ff;
+  font-size: 14px;
+  color: #333;
+}
+
+.login-input:focus {
+  outline: none;
+  background: #e8f0fe;
+}
+
+/* Button */
+.login-button {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(to right, #c084fc, #a855f7);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.login-button:hover {
+  background: linear-gradient(to right, #a855f7, #9333ea);
+}
+
+/* Error Message */
+.login-error {
+  color: red;
+  font-size: 13px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+
+@media (max-width: 480px) {
+  .modal-dialog {
+    margin: 10px;
+  }
+
+  .custom-login-modal {
+    padding: 30px 20px;
+  }
+}
+
+.modal-header {
+  /* padding: 1rem 1rem; */
+  /* justify-content: flex-end; */
+  /* border-bottom: none; */
+}
+
+.modal-header .btn-close {
+    padding: calc(var(--bs-modal-header-padding-y) * .5) calc(var(--bs-modal-header-padding-x) * .5);
+    margin-top: calc(-.5 * var(--bs-modal-header-padding-y));
+    margin-right: calc(-.5 * var(--bs-modal-header-padding-x));
+    margin-bottom: 10px;
+    margin-left: auto;
+}
+
+
+   
+ 
+/* force red background for error toast */
+.custom-toast-error {
+  background-color: #dc3545 !important; /* Bootstrap red */
+  color: #fff !important;
+  font-weight: 500;
+  border-radius: 8px;
+}
+
+.custom-toast-progress {
+  background: #fff !important;
+}

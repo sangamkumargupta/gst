@@ -1,0 +1,26 @@
+@media (max-width: 576px) {
+  .btn {
+    width: 100%;
+    margin-bottom: 5px;
+  }
+
+  .form-label {
+    font-size: 14px;
+  }
+
+  .table th,
+  .table td {
+    font-size: 13px;
+    white-space: nowrap;
+  }
+}
+
+
+@media (max-width: 576px) {
+  .mobile-th-width {
+    min-width: 180px;
+    max-width: 150px;
+    word-wrap: break-word;
+    white-space: normal;
+  }
+}

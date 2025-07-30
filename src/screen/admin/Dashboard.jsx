@@ -1,4 +1,4 @@
-import React from "react"; 
+import React from "react";
 import "../../assets/css/Dashboard.css";
 import PageHeader from "../../components/PageHeader";
 const versionData = [
@@ -116,54 +116,55 @@ const versionData = [
   },
 ];
 
-const Dashboard = () => { 
-
+const Dashboard = () => {
   return (
     <>
-      <PageHeader
-        title="Analytics"
-        parentTitle="Dashboards"
-        parentLink="/dashboard/home"
-      />
+      <div className="  p-4">
+        <PageHeader
+          title="Analytics"
+          parentTitle="Dashboards"
+          parentLink="/dashboard/home"
+        />
 
-      <div className="version-history-container">
-        <h2 className="table-title">Version History</h2>
-        <table className="version-table">
-          <thead>
-            <tr>
-              <th>No.</th>
-              <th>Section</th>
-              <th className="description">Description</th>
-            </tr>
-          </thead>
-          <tbody>
-            {versionData.map((release, releaseIndex) => (
-              <>
-                {/* Single row for the release title and date */}
-                <tr key={`release-${releaseIndex}`}>
-                  <td
-                    colSpan="3"
-                    style={{ color: "#d21a1a", fontWeight: "bold" }}
-                  >
-                    {release.release} (Date: {release.date})
-                  </td>
-                </tr>
-
-                {/* Standard rows for each entry */}
-                {release.entries.map((entry, entryIndex) => (
-                  <tr key={`${releaseIndex}-${entryIndex}`}>
-                    <td className="td-align">{entry.no}</td>
-                    <td className="td-align">{entry.section}</td>
-                    <td>{entry.description}</td>
+        <div className="version-history-container  ">
+          <h2 className="table-title ">Version History</h2>
+          <table className="version-table">
+            <thead>
+              <tr>
+                <th>No.</th>
+                <th>Section</th>
+                <th className="description">Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              {versionData.map((release, releaseIndex) => (
+                <>
+                  {/* Single row for the release title and date */}
+                  <tr key={`release-${releaseIndex}`}>
+                    <td
+                      className="text-start"
+                      colSpan="3"
+                      style={{ color: "#d21a1a", fontWeight: "bold" }}
+                    >
+                      {release.release} (Date: {release.date})
+                    </td>
                   </tr>
-                ))}
-              </>
-            ))}
-          </tbody>
- 
-        </table>
+
+                  {/* Standard rows for each entry */}
+                  {release.entries.map((entry, entryIndex) => (
+                    <tr key={`${releaseIndex}-${entryIndex}`}>
+                      <td className="td-align">{entry.no}</td>
+                      <td className="td-align">{entry.section}</td>
+                      <td className="text-start">{entry.description}</td>
+                    </tr>
+                  ))}
+                </>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
-    </> 
+    </>
   );
 };
 

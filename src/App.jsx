@@ -1,16 +1,26 @@
 import React, { useState, useEffect, useRef } from "react";
-import {   BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
+import "react-toastify/dist/ReactToastify.css";
+import "./App.css";
+
 import Sidebar from "./components/Sidebar";
 import Header from "./components/Header";
-import Footer from "./components/Footer";   
+import HorizontalMenu from "./components/HorizontalMenu";
+
+// Screens
 import Dashboard from "./screen/admin/Dashboard";
-import Profile from "./screen/admin/Profile"; 
-import Ledger from "./screen/admin/Home";
-import ClientTable from "./screen/admin/ClientTable";
+import GstR1 from "./screen/admin/GstR1";
+import Profile from "./screen/admin/Profile";
+import Ledger from "./screen/admin/Ledger";
+import Notification from "./screen/admin/Notification";
+import Challan from "./screen/admin/Challan";
+import ClientTableRegular from "./screen/admin/ClientTableRegular";
+import ClientTableComposition from "./screen/admin/ClientTableComposition";
+import ClientTableAnnual from "./screen/admin/ClientTableAnnual";
 import ClientDetail from "./screen/admin/ClientDetail";
-import ReturnPage from "./screen/admin/ReturnPage"; 
+import ReturnPage from "./screen/admin/ReturnPage";
 import MyClients from "./screen/admin/MyClients";
 import SearchTaxPayer from "./screen/admin/SearchTaxPayer";
 import Eway from "./screen/admin/Home";
@@ -19,36 +29,131 @@ import UserProfile from "./screen/admin/UserProfile";
 import Clients from "./screen/admin/Clients";
 import Login from "./screen/Login";
 
-import "./App.css"; 
-const Layout = ({ children, sidebarOpen, setSidebarOpen, isDesktop, sidebarRef, menuButtonRef, }) => (
-  <div className="app-wrapper d-flex">
-    <Sidebar
-      sidebarOpen={sidebarOpen}
-      setSidebarOpen={setSidebarOpen}
-      isDesktop={isDesktop}
-      sidebarRef={sidebarRef}
-    />
-    <div
-      className={`main-content flex-grow-1 ${
-        sidebarOpen && isDesktop ? "with-sidebar" : "no-sidebar"
-      }`}
-    >
-      <Header setSidebarOpen={setSidebarOpen} menuButtonRef={menuButtonRef} />
-      <div className="p-4 min-vh-100" style={{ background: "#f7f8f9" }}>
-        {children}
+const regularTabs = ["GSTR-01", "GSTR-3B", "GSTR-2A", "GSTR-2B", "GSTR-1A"];
+const compositionTabs = ["CMP-08", "GSTR-4A"]; 
+const annualTab = ["GSTR-9", "GSTR-9C","GSTR-4",  "GSTR-9A"];
+
+const Layout = ({
+  children,
+  sidebarOpen,
+  setSidebarOpen,
+  isDesktop,
+  sidebarRef,
+  menuButtonRef,
+  darkMode,
+  toggleDarkMode,
+  navStyle,
+  setNavStyle,
+  menuStyle,
+  sideMenu,
+}) => {
+  useEffect(() => {
+    const body = document.body;
+    body.classList.remove("vertical", "horizontal");
+    body.classList.add(navStyle);
+
+    const app = document.getElementById("root");
+    if (app) {
+      app.classList.toggle(
+        "horizontal-nav",
+        navStyle === "horizontal" && isDesktop
+      );
+    }
+
+    body.classList.remove("menuClick", "menuHover", "iconClick", "iconHover");
+    body.classList.add(menuStyle);
+
+    body.classList.remove("default", "closed", "iconText", "iconOverlay");
+    body.classList.add(sideMenu);
+  }, [navStyle, menuStyle, sideMenu, isDesktop]);
+
+  const effectiveNavStyle = isDesktop ? navStyle : "vertical";
+
+  return (
+    <div className={`app-wrapper ${effectiveNavStyle}`}>
+      {effectiveNavStyle === "vertical" && (
+        // <Sidebar
+        //   sidebarOpen={sidebarOpen}
+        //   setSidebarOpen={setSidebarOpen}
+        //   isDesktop={isDesktop}
+        //   sidebarRef={sidebarRef}
+        //   navStyle={effectiveNavStyle}
+        // />
+        <Sidebar
+          sidebarOpen={sidebarOpen}
+          setSidebarOpen={setSidebarOpen}
+          isDesktop={isDesktop}
+          sidebarRef={sidebarRef}
+          navStyle={navStyle}
+          darkMode={darkMode} // ✅ Must pass this
+        />
+      )}
+
+      <div
+        className={`main-content ${
+          sidebarOpen && isDesktop && effectiveNavStyle === "vertical"
+            ? "with-sidebar"
+            : "no-sidebar"
+        }`}
+      >
+        <div className="header-container">
+          {/* <Header
+            setSidebarOpen={setSidebarOpen}
+            menuButtonRef={menuButtonRef}
+            darkMode={darkMode}
+            toggleDarkMode={toggleDarkMode}
+            navStyle={effectiveNavStyle}
+            setNavStyle={setNavStyle}
+          /> */}
+          <Header
+            sidebarOpen={sidebarOpen}
+            setSidebarOpen={setSidebarOpen}
+            darkMode={darkMode}
+            toggleDarkMode={toggleDarkMode}
+            navStyle={navStyle}
+            setNavStyle={setNavStyle}
+          />
+
+          {effectiveNavStyle === "horizontal" && isDesktop && (
+            <div style={{ paddingTop: "10px" }}>
+              <HorizontalMenu
+                setSidebarOpen={setSidebarOpen}
+                isDesktop={isDesktop}
+              />
+            </div>
+          )}
+        </div>
+
+        <div className="page-content">{children}</div>
       </div>
-      <Footer />
     </div>
-  </div>
-);
+  );
+};
 
 function App() {
-  // only for test purpose
-  // const [popup, setPopup] = useState(null);
   const [sidebarOpen, setSidebarOpen] = useState(window.innerWidth >= 768);
   const [isDesktop, setIsDesktop] = useState(window.innerWidth >= 768);
+
+  const [darkMode, setDarkMode] = useState(() => {
+    return localStorage.getItem("theme") === "dark";
+  });
+
+  const [navStyle, setNavStyle] = useState("vertical");
+  const [menuStyle, setMenuStyle] = useState("menuClick");
+  const [sideMenu, setSideMenu] = useState("default");
+
   const sidebarRef = useRef(null);
   const menuButtonRef = useRef(null);
+
+  // Apply dark/light mode to body & html
+  useEffect(() => {
+    document.body.classList.toggle("darkmode", darkMode);
+    document.documentElement.setAttribute(
+      "data-theme",
+      darkMode ? "dark" : "light"
+    );
+    localStorage.setItem("theme", darkMode ? "dark" : "light");
+  }, [darkMode]);
 
   useEffect(() => {
     const handleResize = () => {
@@ -78,237 +183,200 @@ function App() {
     return () => document.removeEventListener("click", handleClickOutside);
   }, [sidebarOpen, isDesktop]);
 
+  const toggleDarkMode = () => {
+    setDarkMode((prev) => !prev);
+  };
+
+  const layoutProps = {
+    sidebarOpen,
+    setSidebarOpen,
+    isDesktop,
+    sidebarRef,
+    menuButtonRef,
+    darkMode,
+    toggleDarkMode,
+    navStyle,
+    setNavStyle,
+    menuStyle,
+    sideMenu,
+  };
+
   return (
-    <>
-    {/* <button onClick={() => setPopup({ type: "success", message: "Return downloaded and data saved successfully" })}>
-        Show Success
-      </button>
+    <div className={`app-root ${darkMode ? "darkmode" : ""}`}>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Login />} />
+          <Route
+            path="/dashboard"
+            element={
+              <Layout {...layoutProps}>
+                <Dashboard />
+              </Layout>
+            }
+          />
+          <Route
+            path="/home"
+            element={
+              <Layout {...layoutProps}>
+                <Dashboard />
+              </Layout>
+            }
+          />
+          <Route
+            path="/myclients"
+            element={
+              <Layout {...layoutProps}>
+                <MyClients />
+              </Layout>
+            }
+          />
 
-      <button onClick={() => setPopup({ type: "error", message: "Something went wrong while saving data!" })}>
-        Show Error
-      </button>
+          <Route
+            path="/return"
+            element={
+              <Layout {...layoutProps}>
+                <ReturnPage />
+              </Layout>
+            }
+          />
+          <Route
+            path="/return/regular"
+            element={
+              <Layout {...layoutProps}>
+                <ClientTableRegular />
+              </Layout>
+            }
+          />
+          <Route
+            path="/return/regular/:id"
+            element={
+              <Layout {...layoutProps}>
+                <ClientDetail
+                  title="Regular"
+                  tabs={regularTabs}
+                  defaultTab="GSTR 1"
+                />
+              </Layout>
+            }
+          />
+          <Route
+            path="/return/composition"
+            element={
+              <Layout {...layoutProps}>
+                <ClientTableComposition />
+              </Layout>
+            }
+          />
+         
+          <Route
+            path="/return/composition/:id"
+            element={
+              <Layout {...layoutProps}>
+                <ClientDetail
+                  title="Composition"
+                  tabs={compositionTabs}
+                  defaultTab="CMP 08"
+                />
+              </Layout>
+            }
+          />
+           <Route
+            path="/return/annual"
+            element={
+              <Layout {...layoutProps}>
+                <ClientTableAnnual />
+              </Layout>
+            }
+          />
+           <Route
+            path="/return/annual/:id"
+            element={
+              <Layout {...layoutProps}>
+                <ClientDetail
+                  title="Annual"
+                  tabs={annualTab}
+                  // defaultTab="CMP 08"
+                />
+              </Layout>
+            }
+          />
 
-      {popup && (
-        <PopupMessage
-          type={popup.type}
-          message={popup.message}
-          onClose={() => setPopup(null)}
-        />
-      )}  */}
-    <Router>
-      <Routes>
-        {/* Login Route (No Layout) */}
-        <Route path="/" element={<Login />} />
+          <Route
+            path="/ledger"
+            element={
+              <Layout {...layoutProps}>
+                <Ledger />
+              </Layout>
+            }
+          />
+          <Route
+            path="/Challan"
+            element={
+              <Layout {...layoutProps}>
+                <Challan />
+              </Layout>
+            }
+          />
+          <Route
+            path="/Notification"
+            element={
+              <Layout {...layoutProps}>
+                <Notification />
+              </Layout>
+            }
+          />
+          <Route
+            path="/search-tax-payer"
+            element={
+              <Layout {...layoutProps}>
+                <SearchTaxPayer />
+              </Layout>
+            }
+          />
+          <Route
+            path="/eway"
+            element={
+              <Layout {...layoutProps}>
+                <Eway />
+              </Layout>
+            }
+          />
+          <Route
+            path="/einvoice"
+            element={
+              <Layout {...layoutProps}>
+                <Einvoice />
+              </Layout>
+            }
+          />
+          <Route
+            path="/user-profile"
+            element={
+              <Layout {...layoutProps}>
+                <UserProfile />
+              </Layout>
+            }
+          />
+          <Route
+            path="/profile"
+            element={
+              <Layout {...layoutProps}>
+                <Profile />
+              </Layout>
+            }
+          />
 
-        {/* Authenticated Routes Wrapped with Sidebar/Header/Footer */}
-        <Route
-          path="/dashboard"
-          element={
-            <Layout
-              sidebarOpen={sidebarOpen}
-              setSidebarOpen={setSidebarOpen}
-              isDesktop={isDesktop}
-              sidebarRef={sidebarRef}
-              menuButtonRef={menuButtonRef}
-            >
-              <Dashboard />
-            </Layout>
-          }
-        />
-        <Route
-          path="/return"
-          element={
-            <Layout
-              sidebarOpen={sidebarOpen}
-              setSidebarOpen={setSidebarOpen}
-              isDesktop={isDesktop}
-              sidebarRef={sidebarRef}
-              menuButtonRef={menuButtonRef}
-            >
-              <ReturnPage />
-            </Layout>
-          }
-        />
-        <Route
-          path="/dashboard/home"
-          element={
-            <Layout
-              {...{
-                sidebarOpen,
-                setSidebarOpen,
-                isDesktop,
-                sidebarRef,
-                menuButtonRef,
-              }}
-            >
-              <Dashboard />
-            </Layout>
-          }
-        />
-        <Route
-          path="/dashboard/myclients"
-          element={
-            <Layout
-              {...{
-                sidebarOpen,
-                setSidebarOpen,
-                isDesktop,
-                sidebarRef,
-                menuButtonRef,
-              }}
-            >
-              <MyClients />
-            </Layout>
-          }
-        />
-        <Route
-          path="/return/regular"
-          element={
-            <Layout
-              {...{
-                sidebarOpen,
-                setSidebarOpen,
-                isDesktop,
-                sidebarRef,
-                menuButtonRef,
-              }}> 
-              <ClientTable />
-            </Layout>
-          }
-        />
-        <Route
-        path="/return/regular/:id"
-        element={
-          <Layout
-            {...{
-              sidebarOpen,
-              setSidebarOpen,
-              isDesktop,
-              sidebarRef,
-              menuButtonRef,
-            }}
-          >
-            <ClientDetail />
-          </Layout>
-        }
-      />
-
-        <Route
-          path="/return/composition"
-          element={
-            <Layout
-              {...{
-                sidebarOpen,
-                setSidebarOpen,
-                isDesktop,
-                sidebarRef,
-                menuButtonRef,
-              }}
-            >
-              {/* <MyTablePage /> */}
-              <Clients />
-            </Layout>
-          }
-        />
-        <Route
-          path="/ledger"
-          element={
-            <Layout
-              {...{
-                sidebarOpen,
-                setSidebarOpen,
-                isDesktop,
-                sidebarRef,
-                menuButtonRef,
-              }}
-            >
-              <Ledger />
-            </Layout>
-          }
-        />
-        <Route
-          path="/dashboard/search-tax-payer"
-          element={
-            <Layout
-              {...{
-                sidebarOpen,
-                setSidebarOpen,
-                isDesktop,
-                sidebarRef,
-                menuButtonRef,
-              }}
-            >
-              <SearchTaxPayer />
-            </Layout>
-          }
-        />
-        <Route
-          path="/eway"
-          element={
-            <Layout
-              {...{
-                sidebarOpen,
-                setSidebarOpen,
-                isDesktop,
-                sidebarRef,
-                menuButtonRef,
-              }}
-            >
-              <Eway />
-            </Layout>
-          }
-        />
-        <Route
-          path="/einvoice"
-          element={
-            <Layout
-              {...{
-                sidebarOpen,
-                setSidebarOpen,
-                isDesktop,
-                sidebarRef,
-                menuButtonRef,
-              }}
-            >
-              <Einvoice />
-            </Layout>
-          }
-        />
-        <Route
-          path="/user-profile"
-          element={
-            <Layout
-              {...{
-                sidebarOpen,
-                setSidebarOpen,
-                isDesktop,
-                sidebarRef,
-                menuButtonRef,
-              }}
-            >
-              <UserProfile />
-            </Layout>
-          }
-        />
-        <Route
-          path="/profile"
-          element={
-            <Layout
-              {...{
-                sidebarOpen,
-                setSidebarOpen,
-                isDesktop,
-                sidebarRef,
-                menuButtonRef,
-              }}
-            >
-              <Profile />
-            </Layout>
-          }
-        />
-      </Routes>
-    </Router>
-    </>
+          <Route
+            path="*"
+            element={
+              <Layout {...layoutProps}>
+                <div>Page Not Found</div>
+              </Layout>
+            }
+          />
+        </Routes>
+      </Router>
+    </div>
   );
 }
 

@@ -35,3 +35,14 @@
   color:white;
  
 }
+
+ .delete{
+  background-color: #fdedeb;
+  /* background-color: #e74c3c; */
+  color : #e74c3c;
+}
+.delete:hover{
+  background-color: #e74c3c;
+  /* background-color: #e74c3c; */
+  color : white;
+}

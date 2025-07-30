@@ -27,6 +27,7 @@ const companyOptions = ["GODAWARI INVENTIVE", "ACME CORP", "XYZ TRADERS"];
 
 const tabs = ["GSTR 1", "GSTR 3B", "GSTR 2A", "GSTR 2B", "CMP 08", "GSTR 4A"];
 const Clients = () => {
+  const [activeTab, setActiveTab] = useState("GSTR 1");
   const [filters, setFilters] = useState({
     returnType: "REGULAR",
     year: "2022-2023",
@@ -36,7 +37,7 @@ const Clients = () => {
     frequencys: "SUMMARY",
   });
 
-  const [activeTab, setActiveTab] = useState("GSTR 1");
+  
 
   const [returnData] = useState([
     {

@@ -1,0 +1,100 @@
+/* notifications.css */
+.notification-panel {
+  max-width: 800px;
+  margin: 40px auto;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+  padding: 24px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.notification {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.notification:last-child {
+  border-bottom: none;
+}
+
+.notification-left {
+  display: flex;
+  gap: 16px;
+}
+
+.avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.avatar.purple { background-color: #b794f4; }
+.avatar.pink { background-color: #f687b3; }
+.avatar.gray { background-color: #a0aec0; }
+.avatar.red { background-color: #fc8181; }
+.avatar.violet { background-color: #9f7aea; }
+.avatar.yellow { background-color: #faf089; color: #333; }
+.avatar.green { background-color: #68d391; }
+
+.notification-content {
+  max-width: 600px;
+}
+
+.name {
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+
+.message {
+  font-size: 14px;
+  color: #4a5568;
+}
+
+.time {
+  font-size: 12px;
+  color: #a0aec0;
+  margin-top: 4px;
+}
+
+.date {
+  font-size: 12px;
+  color: #a0aec0;
+}
+
+.tag {
+  display: inline-block;
+  font-size: 12px;
+  padding: 2px 8px;
+  margin: 0 4px;
+  border-radius: 6px;
+}
+
+.tag.files,
+.tag.folders {
+  background-color: #e9d8fd;
+  color: #6b46c1;
+}
+
+.tag.deleted {
+  background-color: #fed7d7;
+  color: #c53030;
+}
+
+.tag.login {
+  background-color: #c6f6d5;
+  color: #276749;
+}
+
+.tag.Update {
+  background-color: #c6f6d5;
+  color: #276749;
+}

@@ -4,9 +4,10 @@ import "../assets/css/DataTable.css";
 const DataTable = ({
   data,
   columns = [],
-  itemsPerPage = 5, 
+  itemsPerPage = 5,
   fetchError = false,
 }) => {
+  console.log('------------->',columns)
   const [searchQuery, setSearchQuery] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
 
@@ -28,7 +29,7 @@ const DataTable = ({
   }, [filteredList, currentPage, itemsPerPage]);
 
   return (
-    <div className="bg-white shadow-sm p-3 rounded">
+    <div className=" shadow-sm p-3 rounded">
       {/* 🔍 Search Input */}
       <div className="row mb-3">
         <div className="col-12 col-md-6 ms-auto">
@@ -47,7 +48,7 @@ const DataTable = ({
 
       {/* 🧾 Table */}
       <div className="table-responsive">
-        <table className="table align-middle">
+        <table className="table align-middle  ">
           <thead className="">
             <tr>
               <th>#</th>

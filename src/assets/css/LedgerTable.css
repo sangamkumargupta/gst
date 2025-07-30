@@ -1,0 +1,86 @@
+.ledger-wrapper {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.ledger-table-container {
+  overflow-x: auto;
+  margin-top: 10px;
+}
+
+.ledger-table {
+  border-collapse: collapse;
+  font-size: 14px;
+  min-width: 900px;
+}
+
+.ledger-table th,
+.ledger-table td {
+  border: 1px solid #ccc;
+  padding: 8px 10px;
+  text-align: center;
+}
+
+.ledger-table th {
+  font-weight: 600;
+}
+
+.bottom-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.bottom-buttons button {
+  padding: 7px 10px;
+  font-weight: 600;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+.bottom-buttons .pdf {
+  background-color: #f7ecff;
+  color: #b94eed;
+  padding: 10px 30px;
+  border-radius: 8px;
+}
+
+.bottom-buttons .pdf:hover {
+  background-color: #b94eed;
+  color: white;
+}
+
+.bottom-buttons .excel {
+  background-color: #e7fce7;
+  color: #45d65b;
+  padding: 10px 30px;
+  border-radius: 8px;
+}
+
+.bottom-buttons .excel:hover {
+  background-color: #45d65b;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .ledger-wrapper {
+    padding: 15px;
+  }
+
+  .bottom-buttons {
+    justify-content: center;
+  }
+
+  .ledger-table {
+    font-size: 12px;
+  }
+
+  .bottom-buttons button {
+    width: 100%;
+    max-width: 300px;
+  }
+}

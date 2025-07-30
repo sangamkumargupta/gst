@@ -1,21 +1,15 @@
 [
   {
-    "id": "CUST001",
-    "name": "AABHAA AYURVEDA CARE PRIVATE LIMITED",
-    "subname": "AABHAA AYURVEDA CARE PRIVATE LIMITED",
-    "gstin": "08AAUCA1798A1ZF",
-    "type": "REGULAR",
-    "date": "",
-    "status": ["FILED", "FILED", "-", "-"]
-  },
-  {
     "id": "CUST002",
     "name": "ATYAN TECHNOLOGIES LIMITED",
     "subname": "ATYAN TECHNOLOGIES LIMITED",
     "gstin": "08AAVCA9296N1ZE",
-    "type": "REGULAR",
-    "date": "",
-    "status": ["FILED", "FILED", "-", "FILED"]
+    "type": "COMPOSITION",
+    "date": "01/07/2023",
+    "financialYear": "2023-2024",
+    "month": "JULY",
+    "frequency": "QUARTERLY",
+    "status": ["FILED" ]
   },
   {
     "id": "CUST003",
@@ -24,15 +18,93 @@
     "gstin": "08ACBPS6587M1ZT",
     "type": "COMPOSITION",
     "date": "01/07/2017",
-    "status": ["-", "-", "-", "-"]
+    "financialYear": "2017-2018",
+    "month": "JULY",
+    "frequency": "MONTHLY",
+    "status": ["-" ]
   },
   {
-    "id": "CUST004",
-    "name": "K.K. SALES & SERVICES",
-    "subname": "RAVINDRA JAISWAL",
-    "gstin": "14AHJPJ0345E1ZY",
+    "id": "CUST005",
+    "name": "ATYAN TECHNOLOGIES LIMITED",
+    "subname": "ATYAN TECHNOLOGIES LIMITED",
+    "gstin": "08AAVCA9296N1ZF",
+    "type": "COMPOSITION",
+    "date": "01/07/2024",
+    "financialYear": "2024-2025",
+    "month": "JULY",
+    "frequency": "MONTHLY",
+    "status": ["FILED" ]
+  },
+  {
+    "id": "CUST006",
+    "name": "JAYA ENTERPRISES",
+    "subname": "JAYA GURNANI",
+    "gstin": "08AISPQ7157J1ZN",
     "type": "REGULAR",
-    "date": "02/07/2017",
-    "status": ["FILED", "FILED", "FILED", "-"]
+    "date": "15/04/2022",
+    "financialYear": "2022-2023",
+    "month": "APRIL",
+    "frequency": "MONTHLY",
+    "status": ["FILED", "FILED"]
+  },
+  {
+    "id": "CUST007",
+    "name": "GLOBAL SOLUTIONS",
+    "subname": "RAHUL MEHRA",
+    "gstin": "09GSMPL4567K1ZZ",
+    "type": "REGULAR",
+    "date": "10/03/2023",
+    "financialYear": "2022-2023",
+    "month": "MARCH",
+    "frequency": "QUARTERLY",
+    "status": ["FILED", "-" ]
+  },
+  {
+    "id": "CUST008",
+    "name": "SHEETAL TRADERS",
+    "subname": "SHEETAL JAIN",
+    "gstin": "07SHJPN3344N1ZQ",
+    "type": "REGULAR",
+    "date": "21/06/2024",
+    "financialYear": "2024-2025",
+    "month": "JUNE",
+    "frequency": "MONTHLY",
+    "status": ["-" , "-"]
+  },
+  {
+    "id": "CUST009",
+    "name": "HEALTHY HERBS",
+    "subname": "AKASH VERMA",
+    "gstin": "10AKVPM3456R1ZR",
+    "type": "COMPOSITION",
+    "date": "03/08/2022",
+    "financialYear": "2022-2023",
+    "month": "AUGUST",
+    "frequency": "QUARTERLY",
+    "status": ["FILED"  ]
+  },
+  {
+    "id": "CUST010",
+    "name": "MALVIYA EXPORTS",
+    "subname": "NEHA MALVIYA",
+    "gstin": "06NMLPJ6789S1ZL",
+    "type": "REGULAR",
+    "date": "25/01/2024",
+    "financialYear": "2023-2024",
+    "month": "JANUARY",
+    "frequency": "MONTHLY",
+    "status": ["FILED", "FILED" ]
+  },
+  {
+    "id": "CUST011",
+    "name": "DESIGNX CREATIONS",
+    "subname": "KARAN RATHORE",
+    "gstin": "08KRRTR5555Y1ZV",
+    "type": "COMPOSITION",
+    "date": "01/12/2022",
+    "financialYear": "2022-2023",
+    "month": "DECEMBER",
+    "frequency": "ANNUAL",
+    "status": ["-" ]
   }
 ]

@@ -6,6 +6,7 @@ const DropdownToggle = ({
   options,
   value,
   onChange,
+  disabled = false,
 }) => {
   const [open, setOpen] = useState(false);
   const ref = useRef();
@@ -24,19 +25,26 @@ const DropdownToggle = ({
     <div className="custom-dropdown-wrapper">
       <div className="custom-dropdown-toggle-wrapper" ref={ref}>
         <button
-          className="custom-btn-dropdown"
-          onClick={() => setOpen(!open)}
+          className={`custom-btn-dropdown ${disabled ? "disabled" : ""}`}
+          onClick={() => {
+            if (!disabled) setOpen(!open);
+          }}
+          disabled={disabled}
         >
           {value || label}
-          <span className={`custom-arrow-dropdown ${open ? "open" : ""}`}>▼</span>
+          <span className={`custom-arrow-dropdown ${open ? "open" : ""}`}>
+            ▼
+          </span>
         </button>
 
-        {open && (
+        {open && !disabled && (
           <ul className="custom-dropdown-menu">
             {options.map((opt) => (
               <li
                 key={opt}
-                className={`custom-dropdown-option ${value === opt ? "custom-dropdown-option-selected" : ""}`}
+                className={`custom-dropdown-option ${
+                  value === opt ? "custom-dropdown-option-selected" : ""
+                }`}
                 onClick={() => {
                   onChange(opt);
                   setOpen(false);

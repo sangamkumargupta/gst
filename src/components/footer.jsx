@@ -4,7 +4,7 @@ import "../assets/css/Footer.css";
 const Footer = () => {
   return (
     <div className="footer">
-      <center>Copyright © 2025 Udon. Designed with ❤️ by Spruko. All rights reserved.</center>
+      <center>© Copyright 2025 | All Rights Reserved | Powered by Eleva8CXM</center>
     </div>
   );
 };

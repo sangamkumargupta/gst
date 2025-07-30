@@ -40,8 +40,8 @@
 
 /* Login button */
 .loginButton {
-  background: #E7FCE7;
-  color: #45D65B;
+  /* background: #E7FCE7; */
+  /* color: #45D65B; */
   padding: 10px;
   font-size: 15px;
   border-radius: 10px;
@@ -51,10 +51,10 @@
   border: none;
 }
 
-.loginButton:hover {
+/* .loginButton:hover {
   background: #45D65B;
   color: #E7FCE7;
-}
+} */
 
 /* Responsive behavior */
 @media (max-width: 576px) {
@@ -63,6 +63,14 @@
   }
 
   .gstClient-mobile-wrapper {
-    display: block; /* Show mobile GST client */
+    display: block;  
+    margin-bottom : 20px;
+ 
   }
+  .custom-dropdown-wrapper {
+    padding-bottom:4px;
+    min-width: 100% !important;
 }
+}
+
+

@@ -1,0 +1,55 @@
+.btn-sm {
+  font-size: 0.75rem;
+  padding: 4px 10px;
+  border-radius: 20px;
+  /* padding: 10px; */
+}
+/* .fas{
+  padding-top: 3px !important;
+} */
+
+.btn-primary {
+  background-color: #B94EED !important;
+  color: white !important;
+  border: none;
+}
+
+.btn_redbtn{
+  border: none ;
+}
+.btn-bar {
+  /* background-color: #333; */
+  /* background-color: var(--menu-color, #ffffff) !important; */
+  overflow-x: auto;          /* Enable horizontal scroll */
+  white-space: nowrap;       /* Prevent wrapping */
+  position: sticky;
+  bottom: 0;                 /* Use bottom instead of top for bottom bar */
+  left: 0;
+  right: 0;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  /* background: #fff; */
+  
+  border-top: 2px solid #cccccc2b !important;
+  gap: 10px;
+  scrollbar-width: thin;
+}
+
+.btn-bar::-webkit-scrollbar {
+  height: 6px;
+}
+.btn-bar::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+}
+
+/* Optional: wrap each button to ensure spacing doesn't collapse */
+.btn-item {
+  flex-shrink: 0;
+}
+.btn-bar .fas{
+  padding-top: 3px;
+  padding-right: 3px;
+}

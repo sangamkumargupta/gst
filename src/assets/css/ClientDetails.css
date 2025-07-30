@@ -5,4 +5,36 @@
     gap: 5px !important;
     margin-bottom: 1.8rem;
     padding-bottom: 10px;
+    padding-top: 20px;
 }
+.Gstr-form{
+    border: 1px solid #B94EED;
+    padding:10px;
+}
+
+@media (max-width: 768px) {  
+    .tabs button {
+        /* flex: 1; */
+        padding: 8px;
+        border: none;
+        background: none;
+        font-weight: 600;
+        cursor: pointer;
+        border-bottom: 3px solid transparent;
+        width: 100%;
+    }
+
+    .tabs {
+        justify-content: center;
+        justify-content: space-between;
+        /* display: flex ; */
+        flex-wrap: wrap;
+        /* gap: 10px; */
+        /* margin-bottom: 1.5rem; */
+        background-color: #F0F0F0;
+        /* border-radius: 10px; */
+        border-top-right-radius: 10px;
+        border-top-left-radius: 10px;
+    }
+}
+

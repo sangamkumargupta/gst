@@ -1,10 +1,8 @@
-.version-history-container {
-  /* max-width: 1000px;
-  margin: 30px auto; */
+.version-history-container { 
   padding-top: 20px;
   border-radius: 8px;
-  background-color: white;
-  color:black;
+  /* background-color: white; */
+  /* color:black; */
   box-shadow: 0 0 12px rgba(0, 0, 0, 0.05);
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -24,9 +22,9 @@
   border-collapse: collapse;
   border : none;
 }
-.version-table tr:hover{
+/* .version-table tr:hover{
   background-color: #dee2e6;
-}
+} */
 .version-table th,
 .version-table td {
   /* padding: 4px 15px; */

@@ -1,0 +1,27 @@
+.custom-tab-header {
+  display: flex;
+  border-bottom: 3px solid #45d65b; /* green underline */
+  margin-bottom: 10px;
+}
+
+.custom-tab-button {
+  padding: 8px 20px;
+  background-color: #e7fce7;
+  border: none;
+  border-right: 1px solid #c8eac8;
+  cursor: pointer;
+  color: #45d65b;
+  font-weight: 500;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.custom-tab-button:last-child {
+  border-right: none;
+}
+
+.custom-tab-button.active {
+  background-color: #45d65b;
+  color: white;
+  font-weight: bold;
+}

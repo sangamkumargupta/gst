@@ -2,31 +2,39 @@
    
   { 
     "items": [
-        {
-        "label": "Dashboard",
-        "icon": "bi-arrow-repeat",
-        "children": [
-          { "label": "Home", "path": "/dashboard/home" },
-          { "label": "My Clients", "path": "/dashboard/myclients" },
-          { "label": "Search Tax Payer", "path": "/dashboard/search-tax-payer" }
-        ]
-      },
+       {
+        "label": "Home",
+        "icon": " bi bi-house-door-fill  ",
+        "path": "/home"
+      }, 
+       {
+        "label": "My Clients",
+        "icon": " bi bi-person-lines-fill",
+        "path": "/myclients"
+      }, 
+       {
+        "label": "Search Tax Payer",
+        "icon": " bi bi-search-heart",
+        "path": "/search-tax-payer"
+      }, 
+        
       {
         "label": "Return",
-        "icon": "bi-arrow-repeat",
+        "icon": "bi bi-clipboard-check",
         "children": [
           { "label": "Regular", "path": "/return/regular" },
-          { "label": "Composition", "path": "/return/composition" } 
+          { "label": "Composition", "path": "/return/composition" } ,
+          { "label": "Annual", "path": "/return/annual" } 
         ]
       },
       {
         "label": "Ledger",
-        "icon": " bi-file-earmark-text",
+        "icon": " bi bi-journal-bookmark",
         "path": "/ledger"
-      },
+      }, 
       {
         "label": "Reconciliations",
-        "icon": " bi-arrow-repeat",
+        "icon": " bi bi-check2-square",
         "children": [
           { "label": "GSTR-2A vs Books", "path": "/reconciliations/gstr2a" },
           { "label": "GSTR-2B vs Books", "path": "/reconciliations/gstr2b" }
@@ -34,11 +42,11 @@
       },
       {
         "label": "Reports",
-        "icon": " bi-bar-chart",
+        "icon": "bi bi-file-earmark-bar-graph",
         "path": "/reports",
         "children": [
-          { "label": "GSTR-2A vs Books", "path": "/reconciliations/gstr2a" },
-          { "label": "GSTR-2B vs Books", "path": "/reconciliations/gstr2b" }
+          { "label": "Report one", "path": "/Reports/gstr2a" },
+          { "label": "Report two", "path": "/Reports/gstr2b" }
         ]
       },
       {
@@ -49,16 +57,10 @@
       },
       {
         "label": "E-Invoice",
-        "icon": " bi-receipt",
+        "icon": "bi bi-receipt",
         "path": "/einvoice",
         "badge": "BETA"
-      },
-      {
-        "label": "User Profile",
-        "icon": " bi-person-circle",
-        "path": "/user-profile"
-      },
-      { "label": "Profile", "icon": " bi-gear", "path": "/profile" }
+      }
     ]
   }
 ]

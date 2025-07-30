@@ -5,7 +5,7 @@
  */
 export const generateInitialValues = (formSchema) => {
   return formSchema.reduce((acc, field) => {
-    acc[field.name] = '';
+    acc[field.name] = field.type === "checkbox" ? false : "";
     return acc;
   }, {});
 };
@@ -15,11 +15,31 @@ export const generateInitialValues = (formSchema) => {
  */
 export const validateFields = (formSchema, values) => {
   const errors = {};
+console.log('valus',values);
   formSchema.forEach(field => {
-    if (!values[field.name]) {
-      errors[field.name] = `${field.label} is required`;
+    const value = values[field.name];
+    
+    if (field.required) {
+      if (field.type === "checkbox") {
+        if (!value) {
+          errors[field.name] = `${field.label} must be accepted`;
+        }
+      } else {
+        if (!value || value.trim() === '') {
+          errors[field.name] = `${field.label} is required`;
+        }
+      }
+    }
+
+    // Additional basic validation (optional)
+    if (field.type === "email" && value) {
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(value)) {
+        errors[field.name] = `Invalid email format`;
+      }
     }
   });
+
   return errors;
 };
 
@@ -50,7 +70,7 @@ export const handleDelete = (values) => {
 };
 
 /**
- * Handle save (for drafts etc.)
+ * Handle save
  */
 export const handleSave = (values) => {
   console.log('Save triggered with data:', values);

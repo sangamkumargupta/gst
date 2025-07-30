@@ -1,0 +1,108 @@
+.processed-container {
+  font-family: sans-serif;
+}
+
+.headers {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+}
+
+.add-btn {
+  background-color: #e0e0e0;
+  color: #666;
+  border: none;
+  padding: 8px 15px;
+  cursor: not-allowed;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.import-btn {
+  background-color: #e7fce7;
+  color: #45d65b;
+  border: none;
+  padding: 8px 15px;
+  cursor: pointer;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.import-btn:hover {
+  background-color: #45d65b;
+  color: #fff;
+}
+
+.controls {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+
+.controls select {
+  margin-left: 10px;
+  border: 1px solid #B94EED;
+  border-radius: 8px;
+  padding: 5px;
+  color: #B94EED;
+  /* background-color: white; */
+}
+
+/* .controls select:hover {
+  background-color: #2f4f8f;
+  color: white;
+  border: none;
+} */
+
+.record-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.record-table th,
+.record-table td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: left;
+}
+
+.record-table th {
+  background-color: #f2f2f2;
+}
+
+.record-table a {
+  color: #2f4f8f;
+  text-decoration: none;
+}
+
+.record-table a:hover {
+  text-decoration: underline;
+}
+
+.action-btns button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+ 
+.back-btn {
+  background-color: white;
+  color: #2f4f8f;
+  border: 1px solid #2f4f8f;
+  padding: 6px 18px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.back-btn:hover {
+  background-color: #2f4f8f;
+  color: white;
+}
